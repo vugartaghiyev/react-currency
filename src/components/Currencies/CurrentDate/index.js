@@ -3,7 +3,7 @@ import styles from "./Date.module.css";
 import { context } from "../../../context";
 
 const CurrentDate = () => {
-  const { setTodaysSlug, setPrevSlug } = useContext(context);
+  const { setTodaysSlug, setPrevSlug, currencies } = useContext(context);
   const [currentDate, setCurrentDate] = useState(
     new Date().toISOString().split("T")[0]
   );
@@ -15,7 +15,7 @@ const CurrentDate = () => {
 
   return (
     <div className={styles.container}>
-      Date:{" "}
+      Tarix:
       <input
         className={styles.date}
         type="date"
@@ -23,6 +23,7 @@ const CurrentDate = () => {
         max={new Date().toISOString().split("T")[0]}
         onChange={(e) => setCurrentDate(e.target.value)}
       />
+      {!currencies && <span className="loading"></span>}
     </div>
   );
 };

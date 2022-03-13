@@ -10,14 +10,31 @@ const Currencies = () => {
     <div className={styles.container}>
       <CurrentDate />
       <div className={styles.itemWrapper}>
-        <Item currency={currencies[0]} prevCurrency={prevCurrencies[0]} />
-        <Item currency={currencies[1]} prevCurrency={prevCurrencies[1]} />
-        <Item currency={currencies[34]} prevCurrency={prevCurrencies[34]} />
-        <Item currency={currencies[38]} prevCurrency={prevCurrencies[38]} />
-        <Item currency={currencies[16]} prevCurrency={prevCurrencies[16]} />
-        <Item currency={currencies[20]} prevCurrency={prevCurrencies[20]} />
+        <Item
+          currency={{ USD: currencies.USD }}
+          prevCurrency={{ USD: prevCurrencies.USD }}
+        />
+        <Item
+          currency={{ EUR: currencies.EUR }}
+          prevCurrency={{ EUR: prevCurrencies.EUR }}
+        />
+        <Item
+          currency={{ RUB: currencies.RUB }}
+          prevCurrency={{ RUB: prevCurrencies.RUB }}
+        />
+        <Item
+          currency={{ GBP: currencies.GBP }}
+          prevCurrency={{ GBP: prevCurrencies.GBP }}
+        />
+        <Item
+          currency={{ CHF: currencies.CHF }}
+          prevCurrency={{ CHF: prevCurrencies.CHF }}
+        />
+        <Item
+          currency={{ TRY: currencies.TRY }}
+          prevCurrency={{ TRY: prevCurrencies.TRY }}
+        />
       </div>
-      <hr />
     </div>
   );
 };

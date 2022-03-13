@@ -7,10 +7,8 @@ const Item = ({ currency, prevCurrency }) => {
   }, [currency, prevCurrency]);
 
   const calcChange = () => {
-    if (currency?.Value._text && prevCurrency?.Value._text) {
-      const val =
-        parseFloat(currency?.Value._text) -
-        parseFloat(prevCurrency?.Value._text);
+    if (currency && prevCurrency) {
+      const val = Object.values(currency)[0] - Object.values(prevCurrency)[0];
       if (val > 0) {
         return (
           <div className={styles.arrow + " " + styles.greenArrow}>
@@ -28,12 +26,13 @@ const Item = ({ currency, prevCurrency }) => {
       }
     }
   };
+
+  console.log();
   return (
     <div className={styles.container}>
-      <div>
-        <span className={styles.name}> {currency?._attributes.Code}</span>{" "}
-        <br />
-        <span className={styles.value}> {currency?.Value._text}</span>
+      <div className={styles.left}>
+        <span className={styles.name}> {Object.keys(currency)[0]}</span>
+        <span className={styles.value}> {Object.values(currency)[0]}</span>
       </div>
       {calcChange()}
     </div>

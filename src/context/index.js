@@ -45,13 +45,38 @@ const ContextProvider = ({ children }) => {
   const getCurrencies = async () => {
     let date = await fetch(url).then((res) => res.text());
     date = convert.xml2js(date, { compact: true, spaces: 4 });
-    setCurrencies(date.ValCurs.ValType[1].Valute);
+
+    let handledVal = {};
+    date.ValCurs.ValType[1].Valute &&
+      date.ValCurs.ValType[1].Valute.forEach((item) => {
+        handledVal = {
+          ...handledVal,
+          [item._attributes.Code]: parseFloat(item.Value._text),
+        };
+      });
+    //  Adding AZN currency
+    handledVal = {
+      ...handledVal,
+      AZN: 1,
+    };
+
+    setCurrencies(handledVal);
   };
 
   const getPrevCurrencies = async () => {
     let date = await fetch(prevUrl).then((res) => res.text());
     date = convert.xml2js(date, { compact: true, spaces: 4 });
-    setPrevCurrencies(date.ValCurs.ValType[1].Valute);
+
+    let handledVal = {};
+    date.ValCurs.ValType[1].Valute &&
+      date.ValCurs.ValType[1].Valute.forEach((item) => {
+        handledVal = {
+          ...handledVal,
+          [item._attributes.Code]: parseFloat(item.Value._text),
+        };
+      });
+
+    setPrevCurrencies(handledVal);
   };
 
   //  ------------------

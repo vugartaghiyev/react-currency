@@ -9,3 +9,22 @@
 body {
   background: rgb(237, 246, 255);
 }
+
+.loading {
+  display: inline-block;
+  width: 30px;
+  height: 4px;
+  background: rgb(0, 196, 0);
+  animation: loading 0.3s linear infinite;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
