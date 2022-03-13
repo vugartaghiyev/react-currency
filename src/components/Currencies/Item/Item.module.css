@@ -1,0 +1,44 @@
+.container {
+  width: 150px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: -5px 0px 2px -4px rgba(0, 38, 255, 0.35);
+  margin: 5px 0;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 18px;
+  color: rgba(31, 31, 31, 0.35);
+  font-weight: 500;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.arrow {
+  font-size: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow span:last-child {
+  font-size: 10px;
+}
+
+.redArrow {
+  color: red;
+}
+
+.greenArrow {
+  color: rgb(0, 226, 0);
+}
