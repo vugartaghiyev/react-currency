@@ -1,7 +1,7 @@
 .container {
   width: 150px;
   padding: 10px 20px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 5px;
   box-shadow: -5px 5px 2px -4px rgba(0, 38, 255, 0.35);
   margin: 5px 0;
@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .left {

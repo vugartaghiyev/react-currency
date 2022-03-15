@@ -6,11 +6,12 @@ import { context } from "../../context";
 import CurrencyChart from "./CurrencyChart";
 
 const Currencies = () => {
-  const { currencies, prevCurrencies } = useContext(context);
+  const { currencies, prevCurrencies, chosenCurrency } = useContext(context);
 
   return (
     <div className={styles.container}>
       <CurrentDate />
+      {chosenCurrency && <CurrencyChart />}
       <div className={styles.itemWrapper}>
         <Item
           currency={{ USD: currencies.USD }}
@@ -37,7 +38,6 @@ const Currencies = () => {
           prevCurrency={{ TRY: prevCurrencies.TRY }}
         />
       </div>
-      <CurrencyChart />
     </div>
   );
 };

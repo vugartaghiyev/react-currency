@@ -1,4 +1,6 @@
 import { Chart } from "react-chartjs-2";
+import { useContext, useState, useEffect } from "react";
+import { context } from "../../../context";
 import {
   Chart as ChartJS,
   LineController,
@@ -16,17 +18,53 @@ ChartJS.register(
   LinearScale
 );
 
+const options = {
+  animation: {
+    duration: 0,
+  },
+  plugins: {
+    tooltip: {
+      mode: "nearest",
+      intersect: false,
+    },
+  },
+};
+
 const CurrencyChart = () => {
-  const chartData = {
-    labels: ["J", "F", "M", "A", "M"],
+  const { chartData, allSlugs, chosenCurrency } = useContext(context);
+  const [data, setData] = useState({
+    labels: [],
     datasets: [
       {
-        data: [5, 10, 15, 20, 9],
+        data: [],
+        backgroundColor: ["white"],
+        borderColor: ["red"],
+        borderWidth: 1,
+        fill: true,
+        lineTension: 0,
       },
     ],
-  };
+  });
 
-  return <Chart type="line" data={chartData} />;
+  useEffect(() => {
+    let d = chartData.map((item) => item[chosenCurrency]);
+    setData({
+      ...data,
+      labels: allSlugs,
+      datasets: [
+        {
+          data: d,
+          backgroundColor: ["white"],
+          borderColor: ["red"],
+          borderWidth: 1,
+          fill: true,
+          lineTension: 0,
+        },
+      ],
+    });
+  }, [chartData, chosenCurrency]);
+
+  return <Chart type="line" data={data} options={options} />;
 };
 
 export default CurrencyChart;
