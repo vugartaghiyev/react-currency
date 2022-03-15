@@ -5,18 +5,23 @@ import {
   LineElement,
   PointElement,
   LinearScale,
-  Title,
   CategoryScale,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LineElement, PointElement, LinearScale);
+ChartJS.register(
+  CategoryScale,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale
+);
 
 const CurrencyChart = () => {
   const chartData = {
     labels: ["J", "F", "M", "A", "M"],
     datasets: [
       {
-        data: [13, 1, 31, 31, 4, 12],
+        data: [5, 10, 15, 20, 9],
       },
     ],
   };
