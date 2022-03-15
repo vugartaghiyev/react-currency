@@ -3,6 +3,8 @@ import CurrentDate from "./CurrentDate";
 import Item from "./Item";
 import styles from "./Currencies.module.css";
 import { context } from "../../context";
+import CurrencyChart from "./CurrencyChart";
+
 const Currencies = () => {
   const { currencies, prevCurrencies } = useContext(context);
 
@@ -35,6 +37,7 @@ const Currencies = () => {
           prevCurrency={{ TRY: prevCurrencies.TRY }}
         />
       </div>
+      <CurrencyChart />
     </div>
   );
 };
