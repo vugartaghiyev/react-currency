@@ -1,14 +1,16 @@
-import Conversion from "./components/Conversion";
-import Currencies from "./components/Currencies";
 import styles from "./styles/App.module.css";
-
+import Layout from "./components/Layout";
+import Routing from "./components/Routing";
+import { BrowserRouter as Router } from "react-router-dom";
 const App = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Valyuta məzənnələri</h1>
-      <Currencies />
-      <Conversion />
-    </div>
+    <Router>
+      <Layout>
+        <div className={styles.container}>
+          <Routing />
+        </div>
+      </Layout>
+    </Router>
   );
 };
 

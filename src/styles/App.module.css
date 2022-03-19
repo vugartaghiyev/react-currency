@@ -3,12 +3,12 @@
   margin: 0 auto;
   padding: 0 10px;
   padding-bottom: 50px;
+  margin-top: 70px;
 }
 
 .title {
-  margin-top: 10px;
-  font-size: 50px;
-  color: rgb(53, 53, 53);
+  font-size: 40px;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 20px 0;
 }
