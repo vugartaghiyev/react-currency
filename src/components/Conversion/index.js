@@ -23,7 +23,7 @@ const Conversion = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>
-        Valyuta çevrilməsi {!currencies && <span className="loading"></span>}
+        Exchange {!currencies && <span className="loading"></span>}
       </h2>
 
       <div className={styles.itemWrapper}>

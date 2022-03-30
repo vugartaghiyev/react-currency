@@ -5,7 +5,9 @@ import styles from "../../styles/App.module.css";
 const Home = () => {
   return (
     <>
-      <h1 className={styles.title}>Valyuta məzənnələri</h1>
+      <h1 className={styles.title}>
+        Exchange rate<span className={styles.byAzn}>(by AZN)</span>
+      </h1>
       <Currencies />
       <Conversion />
     </>
