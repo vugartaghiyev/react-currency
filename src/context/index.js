@@ -19,7 +19,7 @@ const ContextProvider = ({ children }) => {
 
   // Currencies --------------
   const url = (slug) =>
-    `https://blooming-caverns-21217.herokuapp.com/https://www.cbar.az/currencies/${slug}.xml`;
+    `https://www.cbar.az/currencies/${slug}.xml`;
 
   const [currencies, setCurrencies] = useState("");
   const [prevCurrencies, setPrevCurrencies] = useState("");
